@@ -1,0 +1,83 @@
+**If Statement Examples
+
+Eg 1:
+
+USE virtusademo;
+DELIMITER &&  
+CREATE PROCEDURE get_menu5(IN S int , OUT total varchar(255))  
+BEGIN  
+    DECLARE a int;
+    SELECT * FROM Menu WHERE Price> S; 
+    SELECT COUNT(Id) into a FROM Menu;
+    if a>2 then set total='Good';
+    else set total='Bad';
+    end if;
+    END &&  
+DELIMITER ; 
+ 
+
+call get_menu5(25,@total);
+select @total
+
+output :- Good
+
+Eg 2:
+
+USE virtusademo;
+DELIMITER &&  
+CREATE PROCEDURE get_count(IN S int , OUT total varchar(255))  
+BEGIN  
+    DECLARE a int;
+    SELECT * FROM Menu WHERE Marks> S; 
+    SELECT COUNT(StuId) into a FROM Student;
+    if a=10 then set total='All Clear';
+    else set total='Not All are Clear';
+    end if;
+    END &&  
+DELIMITER ; 
+
+
+call get_count(5,@total);
+select @total
+
+output :- All Clear
+
+**CASE Statement Examples
+
+Eg 1:
+
+use virtusademo;
+DELIMITER &&
+create procedure get_S()
+BEGIN
+    declare S int default 10;
+    case S
+       when 10 THEN select S;
+       when 8 then select 0;
+       else
+          begin 
+          end;
+    end case;
+END&&
+DELIMITER;
+
+call get_S();
+
+Eg 2:
+
+use virtusademo;
+DELIMITER &&
+create procedure get_value()
+BEGIN
+    declare V int default 5;
+    case V
+       when 10 THEN select V;
+       when 5 then select 0;
+       else
+          begin 
+          end;
+    end case;
+END&&
+DELIMITER;
+
+call get_value();
