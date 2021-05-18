@@ -1,0 +1,181 @@
+***1)
+
+package demo_one
+
+public class Vehicle 
+  {
+  private int year;
+  protected String color;
+  //getters and setters
+ 
+public int getYear()
+{
+	return year;
+}
+public void setYear(int year)
+{
+	this.year = year;
+}
+ public String getColor()
+ {
+	 return color;
+ }
+ public void setColor(String color)
+ {
+	 this.color=color;
+ }
+ }
+  
+public class Main extends Vehicle
+{
+ public static void main(String[] args)
+ {
+   Vehicle v=new Vehicle();
+
+   v.setYear(2020);
+
+   System.out.println(v.getYear());
+
+   v.setColor("Black");
+
+   System.out.println(v.getColor()); 
+ }
+}
+
+
+***2)
+
+Single Inheritance:-
+
+class Animal{  
+void eat(){System.out.println("eating...");}  
+}  
+class Dog extends Animal{  
+void bark(){System.out.println("barking...");}  
+}  
+class TestInheritance{  
+public static void main(String args[]){  
+Dog d=new Dog();  
+d.bark();  
+d.eat();  
+}
+}
+
+
+Multiple Inhertance:-
+
+interface A
+{
+    public void dis(int num);
+}
+
+interface B
+{
+    public void disp(int num);
+}
+
+class Mult implements A, B
+{
+    public void dis(int num)
+    {
+        System.out.println("From Interface A number is " + num);
+    }
+    
+    public void disp(int num)
+    {
+        System.out.println("From Interface B number is " + num);
+    }
+}
+
+public class Test extends Mult
+{
+    public static void main(String args[])
+    {
+        Mult ml = new Mult();
+        ml.dis(10);
+        ml.disp(20);
+    }
+}
+
+
+
+Multilevel Inheritance:-
+
+class Animal{  
+void eat(){System.out.println("eating...");}  
+}  
+class Dog extends Animal{  
+void bark(){System.out.println("barking...");}  
+}  
+class BabyDog extends Dog{  
+void weep(){System.out.println("weeping...");}  
+}  
+class TestInheritance2{  
+public static void main(String args[]){  
+BabyDog d=new BabyDog();  
+d.weep();  
+d.bark();  
+d.eat();  
+}
+}
+
+Hierarchical Inheritance:-
+
+class Animal{  
+void eat(){System.out.println("eating...");}  
+}  
+class Dog extends Animal{  
+void bark(){System.out.println("barking...");}  
+}  
+class Cat extends Animal{  
+void meow(){System.out.println("meowing...");}  
+}  
+class TestInheritance3{  
+public static void main(String args[]){  
+Cat c=new Cat();  
+c.meow();  
+c.eat();   
+}
+}  
+    
+Hybrid Inheritance:-
+
+interface B
+{
+    public void print();
+}
+
+interface C
+{
+    public void print();
+}
+
+class A
+{
+    public void disA()
+    {
+        System.out.println("ClassA");
+    }
+}
+
+class D extends A implements B, C
+{
+    public void print()
+    {
+        System.out.println("method print()");
+    }
+
+    public void disD()
+    {
+        System.out.println("ClassD");
+    }
+}
+
+public class Car extends D{
+    public static void main(String args[]) {
+        
+        D d = new D();
+        d.disD();
+        d.print();
+    }
+}
