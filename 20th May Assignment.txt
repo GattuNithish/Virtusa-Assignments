@@ -1,0 +1,100 @@
+***Arraylist Example:-
+
+import java.util.*;
+
+public class GFG {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		  ArrayList<Integer> gfg = new ArrayList<Integer>();
+		  
+	        // Initialize an ArrayList with add()
+	        gfg.add(56);
+	        gfg.add(32);
+	        gfg.add(95);
+	        gfg.add(12);
+	        gfg.add(64);
+	  
+	        // print ArrayList
+	        System.out.println("ArrayList : " + gfg);
+	        System.out.println(gfg.size());
+	
+	        gfg.set(1,33);
+	        gfg.add(4,77);
+	        
+	        System.out.println("Updated ArrayList : " + gfg);
+	        System.out.println (gfg.get(2));
+	        gfg.sort(Comparator.naturalOrder());
+	        
+	        System.out.println("Sorted ArrayList : " + gfg);
+	        
+	        boolean boo = gfg.isEmpty();
+	        System.out.println(boo);
+	}
+
+}
+
+LinkedList Example:-
+
+import java.util.*;
+
+public class GFG {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		  LinkedList<String> ll = new LinkedList<String>();
+		  
+	        ll.add("luffy");
+	        ll.add("zoro");
+	        ll.add("sanji");
+	        ll.add("brook");
+	        ll.add("cutty flam");
+	  
+	        System.out.println("LinkedList : " + ll);
+	        System.out.println(ll.size());
+	
+	        ll.set(3,"jimbei");
+	        ll.add(4,"chopper");
+	        
+	        System.out.println("Updated LinkedList : " + ll);
+	        System.out.println (ll.get(2));
+	        ll.sort(Comparator.reverseOrder());
+	        
+	        System.out.println("Sorted LinkedList : " + ll);
+	        
+	        boolean boo = ll.isEmpty();
+	        System.out.println("boo : " + boo);
+	        boolean oob = ll.contains("sanji");
+	        System.out.println(oob);
+	        System.out.println("Index is " + ll.indexOf("luffy"));
+	        System.out.println(ll.lastIndexOf("luffy"));
+	        
+	        ListIterator list_Iter = ll.listIterator(2);
+	        System.out.println("The list is as follows:");
+	        while(list_Iter.hasNext()){
+	           System.out.println(list_Iter.next());
+	        }
+	}
+
+}
+
+**Priority Queue :-
+
+import java.util.*;
+ 
+class PriorityQueueDemo {
+
+    public static void main(String args[])
+    {
+        PriorityQueue<Integer> pQueue = new PriorityQueue<Integer>();
+
+        pQueue.add(10);
+        pQueue.add(20);
+        pQueue.add(15);
+ 
+        System.out.println(pQueue.peek());
+ 
+        System.out.println(pQueue.poll());
+ 
+        System.out.println(pQueue.peek());
+    }
