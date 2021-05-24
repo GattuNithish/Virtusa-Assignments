@@ -1,0 +1,44 @@
+Updation when age greater than 40:-
+
+package demo_one;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+public class Demo9 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String dbURL="jdbc:mysql://localhost:3306/virtusademo";
+        String username = "root";
+        String password = "Welcome@123";
+        try {
+        	Connection con = DriverManager.getConnection(dbURL,username,password);
+        	String sql = "UPDATE Employees SET Empdesg = ? WHERE Empage > ?";
+        	PreparedStatement ps = con.prepareStatement(sql);
+        	ps.setString(1, "TeamLead");
+        	ps.setInt(2, 40);
+        	
+        	        	
+        	int rowsupdated = ps.executeUpdate();
+        	if(rowsupdated>0) {
+        		System.out.println("Query Updated");
+        		
+        	}
+        	else {
+        		System.out.println("Not Updated");
+        		
+        	}
+        	
+        	con.close();
+	}
+
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+}
+}
